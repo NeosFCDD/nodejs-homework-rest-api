@@ -36,7 +36,7 @@ const deleteContact = async (req, res) => {
   res.status(200).json("contact deleted");
 };
 
-const ubdateById = async (req, res) => {
+const updateById = async (req, res) => {
   const { contactId } = req.params;
   const result = await updateContact(contactId, req.body);
   res.status(201).json(result);
@@ -47,5 +47,5 @@ module.exports = {
   getById: ctrlWrapper(getById),
   addNewContact: ctrlWrapper(addNewContact),
   deleteContact: ctrlWrapper(deleteContact),
-  ubdateById: ctrlWrapper(ubdateById),
+  updateById: ctrlWrapper(updateById),
 };
