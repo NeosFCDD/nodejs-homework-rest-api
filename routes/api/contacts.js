@@ -36,7 +36,7 @@ router.put(
   isValidId,
   validateBody(schemas.addSchema),
   authenticate,
-  ctrlContacts.ubdateById
+  ctrlContacts.updateById
 );
 
 router.patch(

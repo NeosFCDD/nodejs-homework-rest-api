@@ -1,5 +1,5 @@
 const { User, userJoiSchemas } = require("./users");
-const { schemas, Contact } = require("./contact");
+const { schemas, Contact } = require("./contacts");
 
 module.exports = {
   User,

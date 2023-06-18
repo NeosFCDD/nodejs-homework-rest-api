@@ -41,6 +41,7 @@ const addSchema = Joi.object({
   email: Joi.string().required(),
   phone: Joi.string().required(),
 });
+
 const schemas = {
   favotiteSchema,
   addSchema,
