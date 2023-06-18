@@ -2,7 +2,7 @@ const { ctrlWrapper } = require("../../helpers");
 
 const { Contact } = require("../../models");
 
-const ubdateById = async (req, res) => {
+const updateById = async (req, res) => {
   const { contactId } = req.params;
   const result = await Contact.findByIdAndUpdate(contactId, req.body, {
     new: true,
@@ -10,4 +10,4 @@ const ubdateById = async (req, res) => {
   res.status(201).json(result);
 };
 
-module.exports = { ubdateById: ctrlWrapper(ubdateById) };
+module.exports = { updateById: ctrlWrapper(updateById) };
