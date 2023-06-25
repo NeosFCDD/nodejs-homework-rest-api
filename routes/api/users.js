@@ -6,7 +6,7 @@ const { ctrlAuth } = require("../../controllers");
 
 const { userJoiSchemas } = require("../../models");
 
-const { validateBody, authenticate } = require("../../middlewares");
+const { validateBody, authenticate, upload } = require("../../middlewares");
 
 router.post(
   "/register",
@@ -24,6 +24,13 @@ router.patch(
   validateBody(userJoiSchemas.updateStatusSchema),
   authenticate,
   ctrlAuth.updateStatusUser
+);
+
+router.patch(
+  "/avatars",
+  authenticate,
+  upload.single("avatar"),
+  ctrlAuth.updateAvatarURL
 );
 
 module.exports = router;
